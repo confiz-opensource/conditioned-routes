@@ -1,0 +1,64 @@
+Copyright (c) 2011
+
+conditioned routes
+=========================================================================================
+  Version: 1.0
+  Author:  Shakeel Mumtaz
+  Plugin Homepage: https://github.com/itshakeel23/conditioned-routes
+  Contributors:  Hassan abdul Rehman, Jhanger Gul
+
+  Introduction:
+  -------------
+  Conditioned Routes is a simple and robust plugin that extends control over routes.
+
+  Features:
+  -----------
+  -> matching against sudomain, hostname, relative path or full url
+  -> ability to compare using standard string matching functions including starts_with, ends_with
+     and substring.
+  -> supports regex.
+
+Pre-Requisite
+=========================================================================================
+  -> rails 2.x.x
+  -> 1.8.x
+
+Installation
+=========================================================================================
+  Conditioned Routes plugin can be installed by running this command from the application root
+  
+  >> ruby script/plugin install git@github.com:itshakeel23/conditioned-routes.git
+  
+Setup
+=========================================================================================
+  After installation, follow these simple steps to setup the plugin. The setup will depend
+  on the version of rails your application is using.
+
+Examples
+===========================================================================================
+
+  1.  map.connect "/:id", :controller => 'main', :action => 'index', :conditions=> {:subdomain => "tv"}
+     
+  -> will match all requests with URLs with subdomain +equal to+ "tv" e.g tv.naitazi.com etc
+
+  2.  map.connect "/:id", :controller => 'main', :action => 'index', :conditions=> {:hostname => "pak", :comparator=>"starts_with"}
+
+  -> will match all requests with URLs with hostname starting with "pak" e.g pakwheels.com, pakdonor.com
+
+  3.  map.connect "/:id", :controller => 'main', :action => 'index', :conditions=> {:url => /deals\.*\.com$/i, :comparator=>"regex"}
+
+  -> will match all requests with URLs with url matching the regex "/deals\.*\.org$/i" e.g deals.naitazi.com etc
+
+===========================================================================================
+
+  Enjoy the simple Conditioned Routes implementation.
+  Version: 1.0
+  Author:  Shakeel Mumtaz
+  Plugin Homepage: https://github.com/itshakeel23/conditioned-routes
+  Contributors:  Hassan abdul Rehman, Jhanger Gul
+
+  Any feedback/comment/issue/donation is welcome!
+
+  Contact: itshakeel23[at]gmail[dot]com 
+
+===========================================================================================
