@@ -27,7 +27,7 @@ Installation
 =========================================================================================
   Conditioned Routes plugin can be installed by running this command from the application root
   
-  >> ruby script/plugin install git@github.com:itshakeel23/conditioned-routes.git
+  >> ruby script/plugin install git@github.com:confiz/conditioned-routes.git
   
 Setup
 =========================================================================================
